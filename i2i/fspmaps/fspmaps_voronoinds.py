@@ -311,7 +311,7 @@ for i in fsp['sector'].unique():
 
                 trans = rasterio.transform.from_origin(west, north, pixel_size, pixel_size)
 
-                dataset = rasterio.open('./data/distance_'+i+'_'+j+'_'+k.replace('/', ' ')+'.tif', 'w', driver='GTiff',
+                dataset = rasterio.open('/Users/ikersanchez/Vizzuality/PROIEKTUAK/i2i/Data/FSP_Maps/distance/distance_'+i+'_'+j+'_'+k.replace('/', ' ')+'.tif', 'w', driver='GTiff',
                                         height=distance.shape[0], width=distance.shape[1],
                                         count=1, dtype='float64',
                                         crs='EPSG:4326', transform=trans)
@@ -327,7 +327,7 @@ for i in fsp['sector'].unique():
                 with rasterio.open('./data/distance.tif') as dataset:
                     myData=dataset.read(1)
 
-                zs = zonal_stats(voronoid, './data/distance_'+i+'_'+j+'_'+k.replace('/', ' ')+'.tif',  all_touched=True)
+                zs = zonal_stats(voronoid, '/Users/ikersanchez/Vizzuality/PROIEKTUAK/i2i/Data/FSP_Maps/distance/distance_'+i+'_'+j+'_'+k.replace('/', ' ')+'.tif',  all_touched=True)
                 zs = gpd.GeoDataFrame(zs)
                 voronoid_zs = voronoid.join(zs)
 
