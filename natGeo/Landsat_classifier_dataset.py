@@ -76,7 +76,7 @@ def load_tif_bands(path, files):
     return data
 
 
-class lansat_classifier_datasets:
+class landsat_classifier_datasets:
     
     def __init__(self, point, buffer, startDate, stopDate, scale):
         """
